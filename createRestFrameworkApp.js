@@ -336,8 +336,6 @@ function run(
         getInstallPackage(version, originalDirectory),
     ]).then(([packageToInstall]) => {
         const allDependencies = [packageToInstall];
-        allDependencies.push("mongoose");
-
         console.log('Installing packages. This might take a couple of minutes.');
 
         Promise.all([
@@ -352,9 +350,6 @@ function run(
                 `Installing ${chalk.cyan('rest-code')}`
             );
             console.log();
-            console.log(
-                `Installing ${chalk.cyan('mongoose')}`
-            );
             return install(
                 root,
                 useYarn,
